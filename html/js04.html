@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JS04</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 18px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mảng</h1>
+    <label for="numElements">Nhập số phần tử:</label>
+    <input type="number" id="numElements" placeholder="Số phần tử" min="1">
+    <button onclick="generateArray()">Tạo mảng</button>
+    <button onclick="sortArray('asc')">Sắp xếp mảng tăng</button>
+    <button onclick="sortArray('desc')">Sắp xếp mảng giảm</button>
+
+    <div id="result"></div>
+
+    <script>
+        let randomArray = [];
+
+        // Tạo mảng ngẫu nhiên
+        function generateArray() {
+            const numElements = document.getElementById('numElements').value;
+            randomArray = [];
+            // Tạo mảng ngẫu nhiên với giá trị từ 1 đến 50
+            for (let i = 0; i < numElements; i++) {
+                randomArray.push(Math.floor(Math.random() * 50) + 1);
+            }
+            displayArray(randomArray, 'Mảng ban đầu');
+        }
+
+        // Sắp xếp mảng theo thứ tự tăng hoặc giảm
+        function sortArray(order) {
+            let sortedArray = [...randomArray];
+            if (order === 'asc') {
+                sortedArray.sort((a, b) => a - b); // Sắp xếp tăng dần
+                displayArray(sortedArray, 'Mảng tăng dần');
+            } else if (order === 'desc') {
+                sortedArray.sort((a, b) => b - a); // Sắp xếp giảm dần
+                displayArray(sortedArray, 'Mảng giảm dần');
+            }
+        }
+
+        // Hiển thị mảng lên giao diện
+        function displayArray(arr, title) {
+            let resultHTML = `<h3>${title}</h3><table><tr>`;
+            for (let i = 0; i < arr.length; i++) {
+                resultHTML += `<td>${arr[i]}</td>`;
+            }
+            resultHTML += `</tr></table>`;
+            document.getElementById('result').innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>

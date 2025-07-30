@@ -1,0 +1,30 @@
+.shadow {
+  text-shadow: 10px 10px 3px gray;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Viết hoa chữ cái đầu */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* In hoa toàn bộ */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Chuyển về chữ thường */
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* Chữ đầu to, dòng đầu in đậm */
+.first-large::first-letter {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.first-large::first-line {
+  font-weight: bold;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JS02</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>This page says</h1>
+    
+    <script>
+        // Bước 1: Nhập tháng
+        var month = prompt("Nhập tháng");
+
+        if (month != null) {
+            // Bước 2: Nhập năm
+            var year = prompt("Nhập năm");
+
+            // Xử lý số ngày trong tháng
+            function getDaysInMonth(month, year) {
+                return new Date(year, month, 0).getDate();
+            }
+
+            // Tính số ngày trong tháng
+            var days = getDaysInMonth(month, year);
+
+            // Hiển thị kết quả
+            document.body.innerHTML += `<div id="result">Tháng ${month} năm ${year} có ${days} ngày</div>`;
+            
+            // Nút Xem ngày giờ
+            var button = document.createElement("button");
+            button.textContent = "Xem ngày giờ";
+            document.body.appendChild(button);
+
+            // Bước 3: Hiển thị ngày giờ hiện tại khi click vào nút
+            button.onclick = function() {
+                var today = new Date();
+                var dayOfWeek = today.toLocaleDateString("vi-VN", { weekday: 'long' });
+                var currentDate = today.toLocaleDateString("vi-VN");
+                var currentTime = today.toLocaleTimeString();
+
+                document.body.innerHTML += `<div id="currentDateTime">Tháng ${month} năm ${year} có ${days} ngày<br>Hôm nay, ${dayOfWeek} ngày ${currentDate}<br>${currentTime}</div>`;
+            };
+        }
+    </script>
+</body>
+</html>

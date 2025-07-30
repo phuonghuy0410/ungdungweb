@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi nội dung và màu sắc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #contentBox {
+            padding: 20px;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: #f44336; /* Màu nền ban đầu */
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        #inputContent {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thay đổi nội dung và màu sắc</h1>
+    <div id="contentBox">WELCOME HTML5!</div>
+
+    <label for="inputContent">Nhập nội dung:</label>
+    <input type="text" id="inputContent" value="WELCOME HTML5!">
+
+    <br>
+
+    <label for="bgColor">Màu nền:</label>
+    <input type="color" id="bgColor" value="#f44336"> 
+
+    <br>
+
+    <label for="textColor">Màu chữ:</label>
+    <input type="color" id="textColor" value="#ffffff">
+
+    <br>
+
+    <button onclick="applyChanges()">Thực hiện</button>
+
+    <script>
+        function applyChanges() {
+            // Lấy giá trị nhập vào và màu sắc
+            var newContent = document.getElementById('inputContent').value;
+            var newBgColor = document.getElementById('bgColor').value;
+            var newTextColor = document.getElementById('textColor').value;
+
+            // Thay đổi nội dung và màu sắc của hộp
+            document.getElementById('contentBox').textContent = newContent;
+            document.getElementById('contentBox').style.backgroundColor = newBgColor;
+            document.getElementById('contentBox').style.color = newTextColor;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css04.css">
+    <title>Bài tập CSS 04</title>
+</head>
+<body>
+    <div class="container">
+      <div class="banner" id="banner">BANNER</div>
+      <div class="content">
+        <div class="item">
+          <img id="img1" src="../images/1.jpg" alt="Ảnh" />
+          <span class="text">1</span>
+        </div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="rotate">Rotate</div>
+      </div>
+    </div>
+  
+    <script>
+      // Tự đổi ảnh trong khung 1
+      const imgList = [
+        "../images/2.jpg",
+          "../images/3.jpg",
+            "../images/4.jpg"
+    
+      ];
+      let index = 0;
+      const img1 = document.getElementById("img1");
+  
+      setInterval(() => {
+        index = (index + 1) % imgList.length;
+        img1.src = imgList[index];
+      }, 3000); //  đổi ảnh
+  
+      // Banner animation
+      const banner = document.getElementById("banner");
+      const colors = ["deeppink", "orange", "purple", "seagreen"];
+      let cIndex = 0;
+      let grow = true;
+      let fontSize = 20;
+  
+      setInterval(() => {
+        // Đổi màu nền
+        cIndex = (cIndex + 1) % colors.length;
+        banner.style.backgroundColor = colors[cIndex];
+  
+        // Phóng to/thu nhỏ chữ
+        if (grow) {
+          fontSize += 2;
+          if (fontSize >= 36) grow = false;
+        } else {
+          fontSize -= 2;
+          if (fontSize <= 20) grow = true;
+        }
+        banner.style.fontSize = fontSize + "px";
+      }, 500); // 0.5s đổi màu và cỡ chữ
+    </script>
+  </body>
+</html>
+
+</body>
+</html>

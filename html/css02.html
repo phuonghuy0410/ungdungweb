@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký sự kiện</title>
+  <link rel="stylesheet" href="../css/02.css">
+</head>
+<body>
+
+  <h2 class="title">CÁC SỰ KIỆN TRONG THÁNG 12/2025</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Sự kiện</th>
+        <th>Địa điểm</th>
+        <th>Thời gian</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hội thi tay nghề điêu khắc</td>
+        <td>Tây Ninh</td>
+        <td>Từ ngày 01-10/12/2025</td>
+      </tr>
+      <tr>
+        <td>Triển lãm tranh sơn mài</td>
+        <td>Bình Dương</td>
+        <td>Từ ngày 05-15/12/2025</td>
+      </tr>
+      <tr>
+        <td>Hội thi bánh dân gian Nam Bộ</td>
+        <td>Vĩnh Long</td>
+        <td>Từ ngày 10-18/12/2025</td>
+      </tr>
+      <tr>
+        <td>Hội thi văn nghệ quần chúng</td>
+        <td>Thành Phố Hồ Chí Minh</td>
+        <td>Từ ngày 20-30/12/2025</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="form-container">
+    <h3>Đăng ký Tham gia Sự kiện</h3>
+    <form>
+      <label>Họ và Tên</label>
+      <input type="text" name="hoten" required>
+
+      <label>Email</label>
+      <input type="email"  name="email" required>
+
+      <label>Số điện thoại</label>
+      <input type="tel" name="sodienthoai" required>
+
+      <label>Chọn sự kiện</label>
+      <select required name="sukien">
+        <option>-- Chọn sự kiện --</option>
+        <option>Hội thi tay nghề điêu khắc</option>
+        <option>Triển lãm tranh sơn mài</option>
+        <option>Hội thi bánh dân gian Nam Bộ</option>
+        <option>Hội thi văn nghệ quần chúng</option>
+      </select>
+
+      <label>Ghi chú thêm</label>
+      <textarea rows="3" name="ghichu"></textarea>
+
+      <button type="submit">Đăng ký ngay</button>
+    </form>
+  </div>
+
+</body>
+</html>

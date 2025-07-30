@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký môn học</title>
+</head>
+<h2 align="center">BÀI KIỂM TRA CHƯƠNG 2</h2>
+
+  <div align="center">
+    <p><b>Môn học:</b> Ứng dụng web</p>
+    <p><b>Mã số sinh viên:</b> 2251010041</p>
+    <p><b>Họ và tên:</b> Lê Phương Huy</p>
+  </div>
+
+  <div align="center">
+    <a href="bt08-index.html">Trang chủ</a> |
+    <a href="bt08-content.html">Nội dung môn học</a> |
+    <a href="bt08-register.html">Đăng ký</a>
+  </div>
+
+<body>
+  <h2 align="center">Đăng ký tham gia điễn đàn</h2>
+  <form >
+    <table  bgcolor="pink" align="center" border="1" >
+        <tr>
+            <td>  <label for="username">Tên đăng nhập:</label> </td>
+              <td > <input type="text" id="username" name="username" required><br></td>
+        </tr>
+        <tr>
+            <td> <label   for="password">Mật khẩu:</label>  </td>
+         <td><input type="password" id="password" name="password" required><br></td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td><input type="radio" name="gender" value="male" checked> Nam
+                <input type="radio" name="gender" value="female"> Nữ</td>
+        </tr>
+        <tr>
+            <td> <label for="birthday">Ngày sinh:</label></td>
+            <td>    <input type="date" id="birthday "name="date" required></td>
+        </tr>
+        <tr>
+            <td> <label for="email">Email:</label></td>
+            <td> <input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td> Ngôn ngữ lập trình yêu thích:</td>
+            <td>
+                <input list="Options"> <br>
+                <datalist id="Options">
+                    <option value="C++">
+                        <option value="C#" selected>
+                            <option value="Java">
+                                <option value="PHP">
+                                    <option value="Python">
+                </datalist>
+             </td>
+        </tr>
+        <tr>
+            <td>Quy định khi tham gia diễn đàn</td>
+            <td>
+                <textarea rows="5" cols="30"> Bài viết nghiêm túc, không chứa những từ ngữ phản cảm</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+            <td>
+                <button type="submit">
+                <img src="../images/DK.png" alt="Đăng ký" style="height:40px;">
+              </button>
+                <button type="reset">
+                    <img src="../images/Untitled1.png" alt="Hủy" style="height:40px;">
+                  </button>
+              
+            </td>
+        </tr>
+    </table>
+  </form>
+
+</body>
+</html>

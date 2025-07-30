@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập Css Shop Online</title>
+  <link rel="stylesheet" href="../css/css07.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Trang chủ</a></li>
+      <li><a href="#">Sản phẩm</a>
+        <ul>
+          <li><a href="#" onclick="filterProducts('all')">Tất cả</a></li>
+          <li><a href="#" onclick="filterProducts('sac-dien-thoai')">Sạc điện thoại</a></li>
+          <li><a href="#" onclick="filterProducts('tai-nghe')">Tai nghe Bluetooth</a></li>
+          <li><a href="#" onclick="filterProducts('balo-laptop')">Balo Laptop</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Khuyến mãi</a></li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="product-container">
+   
+    <div class="product sac-dien-thoai">
+      <img src="../images/sacdt.webp" alt="Sạc điện thoại không dây">
+      <h3>Sạc điện thoại không dây</h3>
+      <p>Giá: 250.000đ</p>
+      <button>Thêm vào giỏ</button>
+    </div>
+    
+
+    <div class="product tai-nghe">
+      <img src="../images/headphone.jpg" alt="Tai nghe Bluetooth">
+      <h3>Tai nghe Bluetooth</h3>
+      <p>Giá: 490.000đ</p>
+      <button>Thêm vào giỏ</button>
+    </div>
+
+
+    <div class="product balo-laptop">
+      <img src="../images/balo.jpg" alt="Balo Laptop">
+      <h3>Balo Laptop</h3>
+      <p>Giá: 560.000đ</p>
+      <button>Thêm vào giỏ</button>
+    </div>
+
+
+    <div class="product sac-dien-thoai">
+      <img src="../images/sacdt.webp" alt="Sạc điện thoại không dây">
+      <h3>Sạc điện thoại không dây</h3>
+      <p>Giá: 250.000đ</p>
+      <button>Thêm vào giỏ</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Shop Online. All rights reserved.</p>
+  </footer>
+
+  <script>
+        function filterProducts(category) {
+  const products = document.querySelectorAll('.product');  // Lấy tất cả các sản phẩm
+
+  products.forEach(product => {
+    if (category === 'all') {
+      // Hiển thị tất cả sản phẩm
+      product.style.display = 'block';
+    } else {
+      // Kiểm tra nếu sản phẩm có class chứa loại được chọn thì hiển thị, ngược lại ẩn
+      if (product.classList.contains(category)) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    }
+  });
+}
+  </script>
+</body>
+</html>

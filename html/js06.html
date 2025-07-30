@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>js06.html</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+        }
+
+        /* Cột 1: căn trái, cột 2: căn giữa */
+        tr td:first-child {
+            text-align: left;
+            width: 40%;
+        }
+
+        tr td:last-child {
+            text-align: center;
+            width: 60%;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* radio và label trong cột 2 */
+        td:last-child input[type="radio"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        td:last-child label {
+            margin-right: 15px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>CÁC PHÉP TÍNH SỐ HỌC</h2>
+        <form name="calculator" method="post" onsubmit="return false;">
+            <table>
+                <tr>
+                    <td>Số thứ 1:</td>
+                    <td><input type="text" id="num1" name="num1" value="5" /></td>
+                </tr>
+                <tr>
+                    <td>Số thứ 2:</td>
+                    <td><input type="text" id="num2" name="num2" value="4" /></td>
+                </tr>
+                <tr>
+                    <td>Chọn phép toán:</td>
+                    <td>
+                        <input type="radio" id="add" name="operation" value="add" />
+                        <label for="add">Cộng</label><br>
+
+                        <input type="radio" id="subtract" name="operation" value="subtract" />
+                        <label for="subtract">Trừ</label><br>
+
+                        <input type="radio" id="multiply" name="operation" value="multiply" />
+                        <label for="multiply">Nhân</label><br>
+
+                        <input type="radio" id="divide" name="operation" value="divide" />
+                        <label for="divide">Chia</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Thực hiện" onclick="calculate()" /></td>
+                    <td><input type="text" id="result" name="result" readonly /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.calculator.num1.value);
+            var num2 = parseFloat(document.calculator.num2.value);
+            var result;
+            var operation = document.querySelector('input[name="operation"]:checked');
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Vui lòng nhập số hợp lệ cho Số thứ 1 và Số thứ 2!");
+                return;
+            }
+
+            if (operation) {
+                switch (operation.value) {
+                    case "add":
+                        result = num1 + num2;
+                        break;
+                    case "subtract":
+                        result = num1 - num2;
+                        break;
+                    case "multiply":
+                        result = num1 * num2;
+                        break;
+                    case "divide":
+                        if (num2 !== 0) {
+                            result = num1 / num2;
+                        } else {
+                            result = "Không thể chia cho 0!";
+                        }
+                        break;
+                }
+                document.calculator.result.value = result;
+            } else {
+                alert("Vui lòng chọn phép toán!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    border: 2px solid blue;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  .banner {
+    background-color: deeppink;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.5s ease;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Khung 1 */
+  .item {
+    position: relative;
+    border: 3px solid red;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+  }
+  
+  .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .text {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: yellow;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Box 2 & 3 */
+  .box {
+    width: 150px;
+    height: 150px;
+    background-color: cyan;
+    text-align: center;
+    line-height: 150px;
+    color: yellow;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px;
+  }
+  
+  .box2 {
+    border: 3px dashed blue;
+    background-color: cyan;
+    color: yellow;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  
+  
+  .box3 {
+    border: 3px dotted magenta;
+    background-color: cyan;
+    color: yellow;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  /* Box 4: Xoay liên tục */
+  .rotate {
+    width: 150px;
+    height: 150px;
+    background-color: darkcyan;
+    color: yellow;
+    text-align: center;
+    line-height: 150px;
+    border: 2px solid olive;
+    font-size: 20px;
+    font-family: serif;
+    animation: spin 4s linear infinite;
+  }
+  
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

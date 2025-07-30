@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Tiêu đề */
+.title {
+  text-align: center;
+  background: linear-gradient(to right, #007bff, #003cff);
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Bảng sự kiện */
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+thead {
+  background: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* Biểu mẫu đăng ký */
+.form-container {
+  width: 350px;
+  background: white;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.form-container h3 {
+  text-align: center;
+  color: #007bff;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container button {
+  width: 100%;
+  margin-top: 15px;
+  background: linear-gradient(to right, #007bff, #003cff);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  opacity: 0.9;
+}

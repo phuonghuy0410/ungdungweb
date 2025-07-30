@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.banner {
+    position: relative;
+    background-image: url('../images/phonebgrd.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.banner:hover {
+    transform: scale(1.1);
+}
+
+.banner h2 {
+    font-size: 36px;
+    color: yellow;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+.box:hover{
+    transform: scale(1.3);
+}
+.box h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.cta {
+    background-color: #27ae60;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.cta button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #27ae60;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    background-color: #eee;
+}
